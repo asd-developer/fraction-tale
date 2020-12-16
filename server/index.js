@@ -4,8 +4,13 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv'
 
+
+import postRoutes from './routes/posts.js';
+
 const app = express();
 dotenv.config();
+
+app.use('/posts', postRoutes);
 
 app.use(bodyParser.json({limit: "10mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "10mb", extended: true}));
