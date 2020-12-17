@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoryBackground, Tittle, Tale, EnterQueue } from './Game.elements'
+import { StoryBackground, Tittle, Tale, EnterQueue, WriteFraction, SubmitFractionBT } from './Game.elements'
 
 const Game = () => {
   return (
@@ -9,6 +9,8 @@ const Game = () => {
             <Tale>Once upon a time...</Tale>
         </StoryBackground>
         <EnterQueue>Join Queue!</EnterQueue>
+        <WriteFraction rows="2" cols="2"></WriteFraction>
+        <SubmitFractionBT>Publish Fraction</SubmitFractionBT>
     </>
   );
 }

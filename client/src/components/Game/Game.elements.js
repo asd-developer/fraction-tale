@@ -32,5 +32,33 @@ export const EnterQueue = styled.button`
     border:none;
     border-radius:2rem;
     color: white;
-    padding: 1rem 4rem 1rem 4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    &:focus{
+        outline: none;
+        background-color: #4a7801;
+    }
+`
+
+export const WriteFraction = styled.textarea`
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: 0.5rem;
+    width: 20rem;
+    height: 5rem;
+    resize: none;
+`
+
+export const SubmitFractionBT = styled.button`
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    background-color: #3c44b5;
+    border:none;
+    border-radius:2rem;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    &:focus{
+        outline: none;
+        background-color: #4e54ad;
+    }
 `

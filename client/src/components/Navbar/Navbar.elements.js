@@ -65,7 +65,10 @@ export const LoginBt = styled.button`
     color: black;
     padding: 0.5rem 2rem;
     margin: 0 2rem 0 0;
-
+    &:focus{
+        outline: none;
+        background-color: #ffd52b;
+    }
 `;
 
 
