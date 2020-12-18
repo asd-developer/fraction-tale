@@ -41,6 +41,8 @@ export const EnterQueue = styled.button`
 
 export const WriteFraction = styled.textarea`
     display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 0.5rem auto;
     border-radius: 0.5rem;
     width: 20rem;

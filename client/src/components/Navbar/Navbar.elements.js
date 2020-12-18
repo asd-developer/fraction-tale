@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const StickyNavbar = styled.nav`
     display: flex;
     flex-direction: row;
@@ -18,12 +20,13 @@ export const FlexEnd = styled.div`
     justify-content: flex-end;
 `;
 
-export const PageTitle = styled.h2`
+export const PageTitle = styled.a`
     font-family: 'Berkshire Swash', cursive;
     font-weight: 50;
     color: white;
     font-size: 2em;
     padding-left: 2rem;
+    text-decoration: none;
 `;
 
 export const Login = styled.input`
@@ -67,7 +70,9 @@ export const LoginBt = styled.button`
     margin: 0 0.5rem 0 0;
     &:focus{
         outline: none;
-        background-color: #ffd52b;
+    }
+    &:active{
+        background-color: #FC9D69;
     }
 `;
 
@@ -80,7 +85,9 @@ export const RegisterBt = styled.button`
     margin: 0 2rem 0 0;
     &:focus{
         outline: none;
-        background-color: #ffd52b;
+    }
+    &:active{
+        background-color: #f5e000;
     }
 `;
 

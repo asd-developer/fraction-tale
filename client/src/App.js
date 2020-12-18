@@ -1,14 +1,27 @@
 import './App.css';
 
-import Navbar from './components/Navbar/Navbar'
-import Game from './components/Game/Game'
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+
+import RegisterPage from './components/RegisterPage/RegisterPage';
+import Navbar from './components/Navbar/Navbar';
+import Game from './components/Game/Game';
+
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Navbar/>
-      <Game/>
-    </div>
+        <Switch>
+            <Route path="/register">
+              <RegisterPage/>
+            </Route>
+            <Route path="/">
+              <Game/>
+            </Route>
+          </Switch>
+      </div>
+    </Router>
   );
 }
 

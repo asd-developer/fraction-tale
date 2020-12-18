@@ -1,12 +1,14 @@
 import React from 'react';
-import { StoryBackground, Tittle, Tale, EnterQueue, WriteFraction, SubmitFractionBT } from './Game.elements'
+import { } from './RegisterPage.elements'
 
-const Game = () => {
+const RegisterPage = () => {
   return (
     <>
-        
+        <div>
+            Hello ola
+        </div>  
     </>
   );
 }
 
-export default Game;
+export default RegisterPage;
