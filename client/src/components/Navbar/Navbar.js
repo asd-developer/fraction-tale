@@ -1,5 +1,5 @@
 import React from 'react';
-import { StickyNavbar, PageTitle, Login, Password, LoginBt, FlexStart, FlexEnd } from './Navbar.elements'
+import { StickyNavbar, PageTitle, Login, Password, LoginBt, FlexStart, FlexEnd, RegisterBt } from './Navbar.elements'
 
 const Navbar = () => {
   return (
@@ -11,6 +11,7 @@ const Navbar = () => {
             <Login type="text" placeholder="Login"/>
             <Password type="password" placeholder="Password"/>
             <LoginBt>Enter</LoginBt>
+            <RegisterBt>Register</RegisterBt>
         </FlexEnd>
     </StickyNavbar>
   );

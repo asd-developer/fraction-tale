@@ -64,6 +64,19 @@ export const LoginBt = styled.button`
     border-radius:2rem;
     color: black;
     padding: 0.5rem 2rem;
+    margin: 0 0.5rem 0 0;
+    &:focus{
+        outline: none;
+        background-color: #ffd52b;
+    }
+`;
+
+export const RegisterBt = styled.button`
+    background-color: #FC9D69;
+    border:none;
+    border-radius:2rem;
+    color: black;
+    padding: 0.5rem 2rem;
     margin: 0 2rem 0 0;
     &:focus{
         outline: none;
