@@ -9,8 +9,11 @@ const Game = () => {
             <Tale>Once upon a time...</Tale>
         </StoryBackground>
         <EnterQueue>Join Queue!</EnterQueue>
-        <WriteFraction rows="2" cols="2"></WriteFraction>
-        <SubmitFractionBT>Publish Fraction</SubmitFractionBT>
+        <div style={{display: "none"}}>
+          <WriteFraction rows="2" cols="2"></WriteFraction>
+          <SubmitFractionBT>Publish Fraction</SubmitFractionBT>
+        </div>
+        
     </>
   );
 }
