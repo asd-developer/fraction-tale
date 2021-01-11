@@ -1,5 +1,4 @@
-#Stack used
-React, NodeJs, styled-components , mongodb, mongoose
+### `This project uses MERN stack`
 
 # Getting Started with Create React App
 
