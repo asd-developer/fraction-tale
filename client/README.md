@@ -1,4 +1,4 @@
-### `This project uses MERN stack`
+# This project uses MERN stack
 
 # Getting Started with Create React App
 
