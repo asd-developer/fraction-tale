@@ -5,7 +5,7 @@ const RegisterPage = () => {
   return (
     <>
         <div>
-            Hello ola
+            <h1>Register</h1>
             <form onSubmit={""}>
               <input type="text" placeholder="name"></input>
               <input type="text" placeholder="email"></input>
