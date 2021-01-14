@@ -4,7 +4,7 @@ import { } from './RegisterPage.elements'
 const RegisterPage = () => {
   return (
     <>
-        <div>
+        <Container>
             <h1>Register</h1>
             <Form onSubmit={""}>
               <input type="text" placeholder="name"></input>
@@ -13,7 +13,7 @@ const RegisterPage = () => {
               <input type="text" placeholder="confirm password"></input>
               <button>Submit</button>
             </Form>
-        </div>  
+        </Container>  
     </>
   );
 }
