@@ -1,5 +1,5 @@
 import React from 'react';
-import { } from './RegisterPage.elements'
+import {Container, Form } from './RegisterPage.elements'
 
 const RegisterPage = () => {
   return (
