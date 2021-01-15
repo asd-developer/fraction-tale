@@ -13,7 +13,7 @@ const Navbar = () => {
               <PageTitle href="/">Fraction Tale</PageTitle>
           </FlexStart>
           <FlexEnd>
-              <Login type="text" placeholder="Login"/>
+              <Login type="text" placeholder="Username"/>
               <Password type="password" placeholder="Password"/>
                 <a href="/login">
                   <LoginBt>Enter</LoginBt>
