@@ -11,7 +11,6 @@ const RegisterPage = () => {
               <input type="text" placeholder="email"></input>
               <input type="text" placeholder="password"></input>
               <input type="text" placeholder="confirm password"></input>
-              <input type="text" placeholder="display name"></input>
               <button>Submit</button>
             </Form>
         </Container>  
