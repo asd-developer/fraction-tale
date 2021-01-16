@@ -13,11 +13,11 @@ export const Form = styled.form`
 
 export const Container = styled.div`
     margin: 1rem auto;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: white;
     width: 20%;
     border-radius: 2rem;
     h1{
-        padding: 1rem;
+        padding: 0.2rem;
     }
 `;
