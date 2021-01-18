@@ -4,8 +4,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv'
 
-
-import postRoutes from './routes/posts.js';
+import postRoutes from './routes/postRouter.js';
+import userRoutes from './routes/userRouter.js';
 
 const app = express();
 dotenv.config();
@@ -23,3 +23,6 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology:
 .catch((error)=> console.log(error.message));
 
 mongoose.set('useFindAndModify', false)
+
+//SET UP ROUTES
+app.use("/users", require("./routes/userRouter"));

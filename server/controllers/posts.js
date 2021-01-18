@@ -1,4 +1,5 @@
 import AddPhraseSchema from '../models/addPhrase.js'
+import userSchema from '../models/userModel.js'
 
 export const getPhrase = async (req,res) =>{
     try{
