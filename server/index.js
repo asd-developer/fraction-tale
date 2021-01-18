@@ -25,4 +25,4 @@ mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology:
 mongoose.set('useFindAndModify', false)
 
 //SET UP ROUTES
-app.use("/users", require("./routes/userRouter"));
+app.use("/users", userRoutes);
