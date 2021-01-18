@@ -9,8 +9,10 @@ const fractionSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-})
+},
+{timestamps: true,}
+);
 
-const FractionSchema = mongoose.model('addPhraseSchema', fractionSchema);
+const FractionSchema = mongoose.model('fraction', fractionSchema);
 
 export default FractionSchema;
