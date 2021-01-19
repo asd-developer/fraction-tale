@@ -1,4 +1,6 @@
 import express from 'express';
+import bcrypt from 'bcryptjs'
+
 import User from '../models/userModel.js';
 
 const router = express.Router();
@@ -7,10 +9,10 @@ router.get("/test", (req,res) =>{
     res.send("Hello it's working")
 })
 
-router.route('/add').post((req,res)=>{
+router.route('/add').post(async (req,res)=>{
     const username = req.body.username;
     const email = req.body.email;
-    const password = req.body.password;
+    const password = await bcrypt.hash(req.body.password, 13);
 
     const newUser = new User(
         {
