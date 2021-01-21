@@ -24,21 +24,6 @@ export const Tale = styled.h1`
     padding: 3rem;
 `
 
-export const EnterQueue = styled.button`
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 2rem;
-    background-color: green;
-    border:none;
-    border-radius:2rem;
-    color: white;
-    padding: 1rem 2rem 1rem 2rem;
-    &:focus{
-        outline: none;
-        background-color: #4a7801;
-    }
-`
-
 export const WriteFraction = styled.textarea`
     display: block;
     font-size: 1.5rem;
