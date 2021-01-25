@@ -1,5 +1,4 @@
 import React from 'react';
-//import { StoryBackground, Tittle, Tale, EnterQueue, WriteFraction, SubmitFractionBT } from './Game.elements'
 import styles from './Game.module.scss'
 
 const Game = () => {
