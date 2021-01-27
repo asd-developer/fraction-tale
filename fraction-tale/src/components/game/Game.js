@@ -8,7 +8,9 @@ const Game = () => {
         <div className={styles.story_background}>
             <h1 className={styles.tale}>Once upon a time...</h1>
         </div>
-        <button type="button" className={styles.enter_queue_bt}>Join Queue!</button>
+        <div className={styles.button_container}>
+          <button type="button" className={styles.enter_queue_bt}>Join Queue!</button>
+        </div>
         <div style={{display: "none"}}>
           <textarea className={styles.write_fractions} rows="2" cols="2"></textarea>
           <button className={styles.submit_fraction_bt}>Publish Fraction</button>

@@ -9,8 +9,9 @@ const Home = () => {
   return (
     <>
       <Navbar/>
+      <Game/>
     </>
   );
 }
 
-export default Game;
+export default Home;
