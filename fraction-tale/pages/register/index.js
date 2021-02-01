@@ -1,10 +1,10 @@
 import React from 'react';
-import {Container, Form } from './RegisterPage.elements'
+import './public/styles/register/register.css'
 
 const RegisterPage = () => {
   return (
     <>
-        <Container>
+        <div className={styles.container}>
             <h1>Register</h1>
             <Form onSubmit={""}>
               <input type="text" placeholder="username"></input>
@@ -13,7 +13,7 @@ const RegisterPage = () => {
               <input type="text" placeholder="confirm password"></input>
               <button>Submit</button>
             </Form>
-        </Container>  
+        </div>  
     </>
   );
 }
