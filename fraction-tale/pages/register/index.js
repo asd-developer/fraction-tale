@@ -1,19 +1,13 @@
-import React from 'react';
-import './public/styles/register/register.css'
+import React from 'react'
+
+import RegisterForm from '../../src/components/register/register-form/RegisterForm'
+import Navbar from '../../src/components/navbar/Navbar'
 
 const RegisterPage = () => {
   return (
     <>
-        <div className={styles.container}>
-            <h1>Register</h1>
-            <Form onSubmit={""}>
-              <input type="text" placeholder="username"></input>
-              <input type="text" placeholder="email"></input>
-              <input type="text" placeholder="password"></input>
-              <input type="text" placeholder="confirm password"></input>
-              <button>Submit</button>
-            </Form>
-        </div>  
+        <Navbar/>
+        <RegisterForm/>
     </>
   );
 }

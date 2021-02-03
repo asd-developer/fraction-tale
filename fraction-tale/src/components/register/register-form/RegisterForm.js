@@ -1,21 +1,22 @@
-import React from 'react';
-import {Container, Form } from './RegisterPage.elements'
+import React from 'react'
+import styles from './RegisterForm.module.scss'
 
-const RegisterPage = () => {
+const RegisterForm = () => {
   return (
     <>
-        <Container>
+        <div className={styles.container}>
             <h1>Register</h1>
-            <Form onSubmit={""}>
+            <form className={styles.register_form} onSubmit={""} >
               <input type="text" placeholder="username"></input>
               <input type="text" placeholder="email"></input>
               <input type="text" placeholder="password"></input>
               <input type="text" placeholder="confirm password"></input>
               <button>Submit</button>
-            </Form>
-        </Container>  
+            </form>
+        </div>
     </>
   );
 }
 
-export default RegisterPage;
+export default RegisterForm;
+

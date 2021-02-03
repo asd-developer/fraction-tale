@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
       <nav className={styles.sticky_navbar}>
           <div className={styles.flexstart}>
-              <h1 className={styles.page_title} href="/">Fraction Tale</h1>
+              <a href="/"><h1 className={styles.page_title} href="/">Fraction Tale</h1></a>
           </div>
           <div className={styles.flexend}>
               <input className={styles.login} type="text" placeholder="Username"/>
