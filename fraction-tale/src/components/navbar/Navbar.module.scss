@@ -25,7 +25,7 @@
     text-decoration: none;
 }
 
-.login{
+.username_input{
     color: black;
     font-size: 1rem;
     font-weight: bold;
@@ -41,7 +41,7 @@
     }
 }
 
-.password{
+.password_input{
     color: black;
     font-size: 1rem;
     font-weight: bold;
@@ -58,6 +58,7 @@
 }
 
 .login_bt{
+    display: inline-block;
     background-color: #f5e000;
     border:none;
     border-radius:2rem;
@@ -72,12 +73,13 @@
     }
 }
 
-.register_bt{
+.register{
+    display: inline-block;
     background-color: #FC9D69;
     border:none;
-    border-radius:2rem;
+    border-radius:1rem;
     color: black;
-    padding: 0.5rem 2rem;
+    padding: 0.4rem 2rem;
     margin: 0 2rem 0 0;
     &:focus{
         outline: none;

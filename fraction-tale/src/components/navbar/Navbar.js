@@ -7,11 +7,12 @@ const Navbar = () => {
   const [getLoginState, setLoginState] = useState({
     username: '',
     password: '',
-  })
+  });
 
 //HELPER METHODS
   //RUNS ON FORM SUBMISSION
-  const submitFormHandler = (event) =>{
+  const submitFormHandler = async (event) =>{
+
     event.preventDefault();
   }
 
@@ -27,11 +28,11 @@ const Navbar = () => {
           </div>
           <div className={styles.flexend}>
             <form onSubmit={submitFormHandler}>
-              <input className={styles.login} type="text" placeholder="Username" name="username" onChange={userHandler}/>
-              <input className={styles.password}  type="password" placeholder="Password" name="password" onChange={userHandler}/>
+              <input className={styles.username_input} type="text" placeholder="Username" name="username" onChange={userHandler} required/>
+              <input className={styles.password_input}  type="password" placeholder="Password" name="password" onChange={userHandler} required/>
                 <button type="submit" className={styles.login_bt}>Enter</button>
               <a href="/register">
-                  <button className={styles.register_bt}>Register</button> 
+                <div className={styles.register}>Register</div> 
               </a>
             </form>
           </div>
