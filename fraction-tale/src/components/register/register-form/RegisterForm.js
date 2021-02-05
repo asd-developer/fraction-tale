@@ -26,7 +26,6 @@ const RegisterForm = () => {
 
   const newUserHandler = (event) =>{
     setNewUser({...getNewUser, [event.target.name] : event.target.value});
-    return onError("this doesnt work")
   }
 
   return (
