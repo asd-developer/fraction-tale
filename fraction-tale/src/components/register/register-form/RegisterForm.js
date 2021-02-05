@@ -26,8 +26,9 @@ const RegisterForm = () => {
 
   const newUserHandler = (event) =>{
     setNewUser({...getNewUser, [event.target.name] : event.target.value});
-    validate();
+    return onError("this doesnt work")
   }
+
   return (
     <>
         <div className={styles.container}>
@@ -35,11 +36,7 @@ const RegisterForm = () => {
             <form className={styles.register_form} onSubmit={submitRegisterForm} required>
               <input type="text" placeholder="username" name="username" onChange={newUserHandler} required></input>
               <input type="email" placeholder="email" name="email" onChange={newUserHandler} required></input>
-              <input type="password" placeholder="password" name="password"
-              validate={(value) =>(value||"").length > 5 && value !== getNewUser.confirm_password }
-              onError={()=>setErrorMessage("Passwords don't match")} 
-              onChange={newUserHandler()} 
-              required/>
+              <input type="password" placeholder="password" name="password" onChange={newUserHandler}  required/>
               <input type="password" placeholder="confirm password" name="confirm_password" onChange={newUserHandler} onError={()=>setErrorMessage("Passwords don't match")} required></input>
               <button>Submit</button>
             </form>
