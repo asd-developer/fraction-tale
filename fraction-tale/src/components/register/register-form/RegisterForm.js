@@ -36,7 +36,7 @@ const RegisterForm = () => {
               <input type="text" placeholder="username" name="username" onChange={newUserHandler} required></input>
               <input type="email" placeholder="email" name="email" onChange={newUserHandler} required></input>
               <input type="password" placeholder="password" name="password" onChange={newUserHandler}  required/>
-              <input type="password" placeholder="confirm password" name="confirm_password" onChange={newUserHandler} onError={()=>setErrorMessage("Passwords don't match")} required></input>
+              <input type="password" placeholder="confirm password" name="confirm_password" onChange={newUserHandler} required></input>
               <button>Submit</button>
             </form>
         </div>
