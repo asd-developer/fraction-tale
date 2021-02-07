@@ -13,6 +13,7 @@ const RegisterForm = () => {
 
   const submitRegisterForm = async (event) =>{
     event.preventDefault();
+    if(getNewUser.password !== getNewUser.confirm_password) event.target.setCustomValidity("Passwords don't match.")
     const data ={
       username: getNewUser.username,
       email: getNewUser.email,
