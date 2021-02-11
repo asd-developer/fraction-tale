@@ -1,5 +1,7 @@
-import { React, useState } from 'react'
-import styles from './RegisterForm.module.scss'
+import { React, useState } from 'react';
+import axios from 'axios';
+
+import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
 //STATE
@@ -13,16 +15,12 @@ const RegisterForm = () => {
 
   const submitRegisterForm = async (event) =>{
     event.preventDefault();
-    if(getNewUser.password !== getNewUser.confirm_password) event.target.setCustomValidity("Passwords don't match.")
     const data ={
       username: getNewUser.username,
       email: getNewUser.email,
       password: getNewUser.password,
     };
-        const res = await fetch('/users/add', {
-          method: 'POST',
-          body: JSON.stringify(data),
-      });
+        const res = await axios.post('http://localhost:5000/users/add',JSON.stringify(data));
   } 
 
   const newUserHandler = (event) =>{

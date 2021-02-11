@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../public/styles/Home.module.css'
 import React from 'react';
+import axios from 'axios'
 
 //SOCKET.IO IMPORT
 import { io } from "socket.io-client";
@@ -19,6 +20,8 @@ const Home = () => {
   socket.on("connect", () => {
     console.log(socket.id); // x8WIv7-mJelg7on_ALbx
   });
+
+
   return (
     <>
       <Navbar/>
