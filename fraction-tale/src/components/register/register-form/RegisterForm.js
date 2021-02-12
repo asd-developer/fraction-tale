@@ -1,9 +1,20 @@
 import { React, useState } from 'react';
 import axios from 'axios';
 
+//SOCKET.IO IMPORT
+import { io, Socket } from "socket.io-client";
+
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
+
+  const socket = io("http://localhost:4000/",{
+    withCredentials: true,
+    extraHeaders: {
+      "my-custom-header": "abcd"
+    }
+  });
+
 //STATE
   //REGISTER FORM STATE
   const [getNewUser, setNewUser] = useState({
@@ -20,7 +31,8 @@ const RegisterForm = () => {
       email: getNewUser.email,
       password: getNewUser.password,
     };
-    const res = await axios.post('http://localhost:5000/users/add',data)
+    socket.emit("register user", data)
+    //const res = await axios.post('http://localhost:5000/users/add',data)
   } 
 
   const newUserHandler = (event) =>{
