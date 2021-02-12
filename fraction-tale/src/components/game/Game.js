@@ -2,6 +2,15 @@ import React from 'react';
 import styles from './Game.module.scss'
 
 const Game = () => {
+  
+  //WEBSOCKET connection
+  const socket = io("http://localhost:4000/",{
+    withCredentials: true,
+    extraHeaders: {
+      "my-custom-header": "abcd"
+    }
+  });
+
   return (
     <>
         <h1 className={styles.tittle}>Current Tale:</h1>
