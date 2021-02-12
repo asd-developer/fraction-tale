@@ -20,7 +20,7 @@ const RegisterForm = () => {
       email: getNewUser.email,
       password: getNewUser.password,
     };
-        const res = await axios.post('http://localhost:5000/users/add',JSON.stringify(data));
+    const res = await axios.post('http://localhost:5000/users/add',data)
   } 
 
   const newUserHandler = (event) =>{
