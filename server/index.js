@@ -19,6 +19,12 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(()=> app.listen(PORT,()=> console.log(`Server running on PORT: ${PORT}`)))
+.catch((error)=> console.log(error.message));
+
+mongoose.set('useFindAndModify', false)
+
 const httpServer = createServer();
 
 const io = new Server(httpServer,{
@@ -33,17 +39,12 @@ const io = new Server(httpServer,{
 io.on("connection", (socket) => {
     console.log(socket.id)
     socket.on("register user", user => {
+      
       console.log(user.username, "was registered");
     })
 });
 
 httpServer.listen(4000);
-
-mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(()=> app.listen(PORT,()=> console.log(`Server running on PORT: ${PORT}`)))
-.catch((error)=> console.log(error.message));
-
-mongoose.set('useFindAndModify', false)
 
 //SET UP ROUTES
 app.use("/users", userRoutes);
