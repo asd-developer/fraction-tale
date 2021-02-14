@@ -10,12 +10,12 @@ import fractionRoutes from './routes/fractionRouter.js';
 import userRoutes from './routes/userRouter.js';
 
 const app = express();
+
 dotenv.config();
 
 app.use(bodyParser.json({limit: "10mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "10mb", extended: true}));
 app.use(cors());
-
 
 const PORT = process.env.PORT || 5000;
 

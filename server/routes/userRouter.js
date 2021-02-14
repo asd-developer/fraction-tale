@@ -1,5 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 import User from '../models/userModel.js';
 
@@ -29,8 +30,16 @@ router.route('/register').post(async (req,res)=>{
             });
         newUser.save()
             .then(() => res.json('User added!'))
-            .then(() => res.send('User added! Redirecting you to the home page...'))
+            //.then(() => res.send('User added! Redirecting you to the home page...'))
             .catch(err => res.status(400).json('Error: ' + err));
+        
+        //Log in user
+        const token = jwt.sign({
+            user: newUser._id
+        }, process.env.JWT_SECRET)
+
+        console.log(token)
+
     }
 });
 
