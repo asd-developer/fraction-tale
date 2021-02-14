@@ -26,7 +26,7 @@ const RegisterForm = () => {
       email: getNewUser.email,
       password: getNewUser.password,
     };
-    const res = await axios.post('http://localhost:5000/users/add',data);
+    const res = await axios.post('http://localhost:5000/users/register',data);
     
   } 
 
@@ -39,10 +39,10 @@ const RegisterForm = () => {
         <div className={styles.container}>
             <h1>Register</h1>
             <form className={styles.register_form} onSubmit={submitRegisterForm} required>
-              <input type="text" placeholder="username" name="username" onChange={newUserHandler} required></input>
-              <input type="email" placeholder="email" name="email" onChange={newUserHandler} required></input>
-              <input type="password" placeholder="password" name="password" onChange={newUserHandler}  required/>
-              <input type="password" placeholder="confirm password" name="confirm_password" onChange={newUserHandler} required></input>
+              <input type="text" placeholder="username" name="username" onChange={newUserHandler} value={getNewUser.username} required></input>
+              <input type="email" placeholder="email" name="email" onChange={newUserHandler} value={getNewUser.username} required></input>
+              <input type="password" placeholder="password" name="password" onChange={newUserHandler} value={getNewUser.username} required/>
+              {/*<input type="password" placeholder="confirm password" name="confirm_password" onChange={newUserHandler} required></input>*/}
               <button>Submit</button>
             </form>
         </div>

@@ -9,7 +9,7 @@ router.get("/test", (req,res) =>{
     res.send("Hello it's working")
 })
 
-router.route('/add').post(async (req,res)=>{
+router.route('/register').post(async (req,res)=>{
     console.log(req.body)
     const { username, email, password } = req.body
     console.log(email)

@@ -32,9 +32,6 @@ const io = new Server(httpServer,{
 
 io.on("connection", (socket) => {
     console.log(socket.id)
-    socket.on("register user", user => {
-      console.log(user.username, "was registered");
-    })
 });
 
 httpServer.listen(4000);
