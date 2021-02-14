@@ -1,14 +1,20 @@
 import React from 'react';
 import styles from './Game.module.scss'
 
+//SOCKET.IO IMPORT
+import { io } from "socket.io-client";
+
 const Game = () => {
-  
   //WEBSOCKET connection
   const socket = io("http://localhost:4000/",{
     withCredentials: true,
     extraHeaders: {
       "my-custom-header": "abcd"
     }
+  });
+  
+  socket.on("connect", () => {
+    console.log(socket.id); // x8WIv7-mJelg7on_ALbx
   });
 
   return (

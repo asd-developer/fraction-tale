@@ -1,5 +1,4 @@
 import { React, useState } from 'react'
-import { useRouter } from 'next/router'
 import axios from 'axios'
 
 
@@ -28,8 +27,7 @@ const RegisterForm = () => {
       password: getNewUser.password,
     };
     const res = await axios.post('http://localhost:5000/users/add',data);
-    router.push("/");
-
+    
   } 
 
   const newUserHandler = (event) =>{
