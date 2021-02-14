@@ -11,35 +11,42 @@ router.get("/test", (req,res) =>{
 })
 
 router.route('/register').post(async (req,res)=>{
-    console.log(req.body)
-    const { username, email, password } = req.body
-    console.log(email)
-    
-    if(!username || !email || !password){
-        return res
-            .status(400)
-            .json({errorMessage: "Some form inputs are not correct"})
-    }
-    else{
-        const hashedpassword = await bcrypt.hash(req.body.password,13);
-        const newUser = new User(
-            {
-                username,
-                email,
-                password,
-            });
-        newUser.save()
-            .then(() => res.json('User added!'))
-            //.then(() => res.send('User added! Redirecting you to the home page...'))
-            .catch(err => res.status(400).json('Error: ' + err));
+    try{
+        console.log(req.body)
+        const { username, email, password } = req.body
+        console.log(email)
         
-        //Log in user
-        const token = jwt.sign({
-            user: newUser._id
-        }, process.env.JWT_SECRET)
+        if(!username || !email || !password){
+            return res
+                .status(400)
+                .json({errorMessage: "Some form inputs are not correct"})
+        }
+            const hashedpassword = await bcrypt.hash(req.body.password,13);
+            const newUser = new User(
+                {
+                    username,
+                    email,
+                    password,
+                });
+            newUser.save()
+                //.then(() => res.json('User added!'))
+                //.then(() => res.send('User added! Redirecting you to the home page...'))
+                .catch(err => res.status(400).json('Error: ' + err));
+            
+            //Log in user
+            const token = jwt.sign({
+                user: newUser._id
+            }, process.env.JWT_SECRET)
 
-        console.log(token)
+            //send the http cookie
 
+            res.cookie("token", token,{
+                httpOnly: true,
+            }).send();
+
+        }catch(err){
+            console.log(err);
+           // res.status(500).send;
     }
 });
 
