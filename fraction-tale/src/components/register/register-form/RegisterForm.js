@@ -1,10 +1,6 @@
 import { React, useState } from 'react'
 import axios from 'axios'
 
-
-//SOCKET.IO IMPORT
-import { io, Socket } from "socket.io-client";
-
 import styles from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
@@ -20,7 +16,6 @@ const RegisterForm = () => {
 
   const submitRegisterForm = async (event) =>{
     event.preventDefault();
-    const router = useRouter()
     const data ={
       username: getNewUser.username,
       email: getNewUser.email,
@@ -40,8 +35,8 @@ const RegisterForm = () => {
             <h1>Register</h1>
             <form className={styles.register_form} onSubmit={submitRegisterForm} required>
               <input type="text" placeholder="username" name="username" onChange={newUserHandler} value={getNewUser.username} required></input>
-              <input type="email" placeholder="email" name="email" onChange={newUserHandler} value={getNewUser.username} required></input>
-              <input type="password" placeholder="password" name="password" onChange={newUserHandler} value={getNewUser.username} required/>
+              <input type="email" placeholder="email" name="email" onChange={newUserHandler} value={getNewUser.email} required></input>
+              <input type="password" placeholder="password" name="password" onChange={newUserHandler} value={getNewUser.password} required/>
               {/*<input type="password" placeholder="confirm password" name="confirm_password" onChange={newUserHandler} required></input>*/}
               <button>Submit</button>
             </form>

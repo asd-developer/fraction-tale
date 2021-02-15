@@ -11,15 +11,14 @@ router.get("/test", (req,res) =>{
 })
 
 router.route('/register').post(async (req,res)=>{
-    try{
         console.log(req.body)
         const { username, email, password } = req.body
         console.log(email)
         
         if(!username || !email || !password){
-            return res
-                .status(400)
-                .json({errorMessage: "Some form inputs are not correct"})
+            return res.status(400).json({
+                errorMessage: "Some form inputs are not correct",
+            })
         }
             const hashedpassword = await bcrypt.hash(req.body.password,13);
             const newUser = new User(
@@ -28,10 +27,12 @@ router.route('/register').post(async (req,res)=>{
                     email,
                     password,
                 });
+        try{
             newUser.save()
                 //.then(() => res.json('User added!'))
                 //.then(() => res.send('User added! Redirecting you to the home page...'))
-                .catch(err => res.status(400).json('Error: ' + err));
+                //.catch(err => res.status(400).json('Error: ' + err));
+            
             
             //Log in user
             const token = jwt.sign({
@@ -43,11 +44,10 @@ router.route('/register').post(async (req,res)=>{
             res.cookie("token", token,{
                 httpOnly: true,
             }).send();
-
-        }catch(err){
-            console.log(err);
-           // res.status(500).send;
-    }
+        }
+        catch(err){
+            console.log(err)
+        }
 });
 
 router.get("/allusers", (req,res) =>{
