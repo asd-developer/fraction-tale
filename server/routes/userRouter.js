@@ -20,6 +20,12 @@ router.route('/register').post(async (req,res)=>{
                 errorMessage: "Some form inputs are not correct",
             })
         }
+        if(username.length <= 4 || password.length <= 4 ){
+            return res.status(400).json({
+                errorMessage: "Username or password doesn't have engouth length",
+            })
+        }
+        else{
             const hashedpassword = await bcrypt.hash(req.body.password,13);
             const newUser = new User(
                 {
@@ -28,11 +34,16 @@ router.route('/register').post(async (req,res)=>{
                     password,
                 });
         try{
-            newUser.save()
+            newUser.save((err)=>{
+                //duplicate key
+                if ( err && err.code === 11000 ) {
+                    res.send('User already exists');
+                    res.redirect('/')
+                    return;
+                }
+            });
                 //.then(() => res.json('User added!'))
-                //.then(() => res.send('User added! Redirecting you to the home page...'))
                 //.catch(err => res.status(400).json('Error: ' + err));
-            
             
             //Log in user
             const token = jwt.sign({
@@ -43,10 +54,11 @@ router.route('/register').post(async (req,res)=>{
 
             res.cookie("token", token,{
                 httpOnly: true,
-            }).send();
+            }).send()
         }
         catch(err){
             console.log(err)
+        }
         }
 });
 
