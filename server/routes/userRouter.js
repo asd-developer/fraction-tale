@@ -42,8 +42,6 @@ router.route('/register').post(async (req,res)=>{
                     return;
                 }
             });
-                //.then(() => res.json('User added!'))
-                //.catch(err => res.status(400).json('Error: ' + err));
             
             //Log in user
             const token = jwt.sign({
